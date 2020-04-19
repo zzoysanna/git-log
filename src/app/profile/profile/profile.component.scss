@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  overflow: visible;
+  padding: 20px;
+  .user {
+    width: 120px;
+    margin-bottom: 40px;
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    p {
+      font-weight: 600;
+      display: flex;
+      align-items: flex-end;
+      margin: 0;
+    }
+    mat-icon {
+      font-size: 20px;
+      height: 20px;
+    }
+  }
+  .repos {
+    &-list {
+      width: 200px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      li {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        line-height: 30px;
+      }
+      mat-icon {
+        padding-right: 7px;
+      }
+    }
+    &-info {
+      background: rgba(255,255,255,0.5);
+      color: black;
+      position: relative;
+      padding: 20px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: top;
+      p {
+        margin: 0 0 5px;
+      }
+      mat-icon {
+        border: 0;
+        -webkit-appearance: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        background: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="user">
+    <img [src]="user?.avatar" [alt]="user?.login + ' picture'">
+    <p>
+        <mat-icon>person</mat-icon>
+        {{user?.login}}
+    </p>
+</div>
+
+<h2>My repositories:</h2>
+<div class="repos">
+    <ul class="repos-list">
+        <li *ngFor="let repo of repos" (click)="selectRepo(repo)">
+            <mat-icon>{{isSelected(repo?.id) ? 'radio_button_checked' : 'radio_button_unchecked'}}</mat-icon>
+            {{repo.name}}
+        </li>
+    </ul>
+    <mat-card class="repos-info" *ngIf="selectedRepo">
+        <mat-icon class="close" (click)="closeInfoBlock()">close</mat-icon>
+        <p><strong>Name:</strong> {{selectedRepo.name}}</p>
+        <p><strong>Description:</strong> {{selectedRepo.description || 'no description'}}</p>
+        <p><strong>Created date:</strong> {{selectedRepo.createdAt | date}}</p>
+        <p><strong>Contributors:</strong> {{joinContributors(selectedRepo.contributors)}}</p>
+    </mat-card>
+</div>
